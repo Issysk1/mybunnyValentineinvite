@@ -37,11 +37,7 @@ button {
 #no {
   background: white;
   color: #ff4d6d;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  transition: left 0.1s ease, top 0.1s ease;
+  transition: all 0.3s ease;
 }
 
 /* HEARTS */
@@ -93,6 +89,7 @@ button {
   display: block;
 }
 
+/* ANIMATIONS */
 @keyframes float {
   from { transform: translateY(0); opacity: 1; }
   to { transform: translateY(-120vh); opacity: 0; }
