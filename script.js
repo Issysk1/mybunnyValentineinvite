@@ -14,22 +14,22 @@ bees.forEach(b => {
   b.style.top = Math.random() * window.innerHeight + "px";
 });
 
-// 😈 NO ESCAPES
+// 😈 NO BUTTON RUNS
 const noBtn = document.getElementById("no");
 noBtn.addEventListener("mouseover", () => {
   noBtn.style.left = Math.random() * (window.innerWidth - 150) + "px";
   noBtn.style.top = Math.random() * (window.innerHeight - 80) + "px";
 });
 
-// 💕 YES
+// 💕 YES BUTTON
 document.getElementById("yes").onclick = () => {
-  document.getElementById("valentine").classList.add("hidden");
-  document.getElementById("yesMessage").classList.remove("hidden");
+  bees[0].style.left = "50%";
+  bees[1].style.left = "52%";
   explodeHearts();
-
+  document.getElementById("yesMessage").classList.remove("hidden");
   setTimeout(() => {
     document.getElementById("quizIntro").classList.remove("hidden");
-  }, 2500);
+  }, 2000);
 };
 
 // 💥 HEART EXPLOSION
@@ -46,11 +46,41 @@ function explodeHearts() {
 
 // 💖 QUIZ
 const questions = [
-  { q: "Who’s hotter? 😏", a: [ ["Me (obviously)", false], ["You (no debate)", true], ["Us together 🥵", false], ["The tension rn", false] ] },
-  { q: "Who fell in love first? 💘", a: [ ["You (I saw it coming)", false], ["Me (I tried to play it cool)", false], ["Both at the same time (soulmate timing ✨)", true], ["Our vibes before we did", false] ] },
-  { q: "Who is funnier? 😏", a: [ ["Me (obviously 🙄)", false], ["You (don’t let it go to your head)", false], ["Both of us (comedy duo energy 😌)", true], ["The arguments we turn into jokes", false] ] },
-  { q: "Who loves more? 🥰", a: [ ["You (dramatically)", false], ["Me (unhealthily 😌)", false], ["Both—just differently but deeply 💗", true], ["Yes.", false] ] },
-  { q: "What’s my favorite thing about you? 😍", a: [ ["Your looks (hello??)", false], ["Your personality (huge bonus)", false], ["The way you make me feel loved & calm 🤍", true], ["The fact that you’re mine 😌", false] ] }
+  { q: "Who’s hotter? 😏", a: [
+      ["Me (obviously)", "I am hot, but you are hotter 😘", false],
+      ["You (no debate)", "", true],
+      ["Us together 🥵", "Together we’re 🔥, but still… you win 😉", false],
+      ["The tension rn", "The tension is real, but you take the crown 💛", false]
+    ]
+  },
+  { q: "Who fell in love first? 💘", a: [
+      ["You (I saw it coming)", "You were the first spark, but I caught fire 🔥", false],
+      ["Me (I tried to play it cool)", "You tried, but I know 💗", false],
+      ["Both at the same time (soulmate timing ✨)", "", true],
+      ["Our vibes before we did", "The vibes were strong, but timing wins 🐝", false]
+    ]
+  },
+  { q: "Who is funnier? 😏", a: [
+      ["Me (obviously 🙄)", "You’re funny too, but we’re both 😂", false],
+      ["You (don’t let it go to your head)", "Okay yes, but we’re a comedy duo 😌", false],
+      ["Both of us (comedy duo energy 😌)", "", true],
+      ["The arguments we turn into jokes", "True, but still not as funny 😏", false]
+    ]
+  },
+  { q: "Who loves more? 🥰", a: [
+      ["You (dramatically)", "Dramatic yes, but I love harder 💗", false],
+      ["Me (unhealthily 😌)", "Maybe… but my love is endless 💛", false],
+      ["Both—just differently but deeply 💗", "", true],
+      ["Yes.", "Yes… but more than yes 😘", false]
+    ]
+  },
+  { q: "What’s my favorite thing about you? 😍", a: [
+      ["Your looks (hello??)", "You look amazing, but my favorite is your heart 💛", false],
+      ["Your personality (huge bonus)", "Personality top-tier, but still… 💖", false],
+      ["The way you make me feel loved & calm 🤍", "", true],
+      ["The fact that you’re mine 😌", "True, but I love that feeling too 😘", false]
+    ]
+  }
 ];
 
 let i = 0;
@@ -69,22 +99,22 @@ function showQ() {
     const b = document.createElement("button");
     b.innerText = ans[0];
     b.onclick = () => {
-      if (ans[1]) {
+      if (ans[2]) {
         explodeHearts();
         i++;
         if (i < questions.length) showQ();
         else revealNext();
       } else {
-        b.innerText = "❌ try again";
+        b.innerText = ans[1];
       }
     };
     a.appendChild(b);
   });
 }
 
-// 💌 REVEAL SECTIONS
+// 💝 Reveal next sections
 function revealNext() {
-  ["dates","love","memories","music"].forEach((id, idx) => {
+  ["dates","love","memories","music","goodbye"].forEach((id, idx) => {
     setTimeout(() => {
       document.getElementById(id).classList.remove("hidden");
     }, idx * 1200);
@@ -102,24 +132,22 @@ function revealNext() {
   const list = document.getElementById("loveList");
   loveItems.forEach((t, i) => {
     setTimeout(() => {
-      const c = document.createElement("div");
-      c.className = "card";
-      c.innerText = t;
-      list.appendChild(c);
+      const s = document.createElement("p");
+      s.innerText = t;
+      list.appendChild(s);
     }, i * 800);
   });
 }
 
-// 📅 DATE PICKER
-document.querySelectorAll("#dates .card").forEach(card => {
-  card.onclick = () => {
-    document.querySelectorAll("#dates .card").forEach(c => c.classList.remove("selected"));
-    card.classList.add("selected");
-    document.getElementById("dateResult").innerText = "Perfect choice 😌💖 We’re doing this.";
-  };
-});
-
 // 📸 MEMORY FLIP
-function flip(el) {
-  el.classList.toggle("flipped");
-}
+function flip(el) { el.classList.toggle("flipped"); }
+
+// 🏖️ DATE PICK
+const dateCards = document.querySelectorAll(".selectable .card");
+dateCards.forEach(c => {
+  c.addEventListener("click", () => {
+    dateCards.forEach(card => card.classList.remove("selected"));
+    c.classList.add("selected");
+    document.getElementById("dateResult").innerText = `You picked: "${c.innerText}" 😘🔥`;
+  });
+});
