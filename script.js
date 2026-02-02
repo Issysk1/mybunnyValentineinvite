@@ -44,41 +44,40 @@ function explodeHearts() {
   }
 }
 
-// 💖 QUIZ
+💖 QUIZ
 const questions = [
   { q: "Who’s hotter? 😏", a: [
-      ["Me (obviously)", "I am hot, but you are hotter 😘", false],
+      ["Me (obviously)", "Wrong answer 😌 I’m cute, but you’re the full distraction.", false],
       ["You (no debate)", "", true],
-      ["Us together 🥵", "Together we’re 🔥, but still… you win 😉", false],
-      ["The tension rn", "The tension is real, but you take the crown 💛", false]
+      ["Us together 🥵", "Wrong answer 😏 We’re hot together, but you still steal the show.", false],
+      ["The tension rn", "Wrong answer 😮‍💨 The tension’s wild, but you’re wilder.", false]
     ]
   },
   { q: "Who fell in love first? 💘", a: [
-      ["You (I saw it coming)", "You were the first spark, but I caught fire 🔥", false],
-      ["Me (I tried to play it cool)", "You tried, but I know 💗", false],
-      ["Both at the same time (soulmate timing ✨)", "", true],
-      ["Our vibes before we did", "The vibes were strong, but timing wins 🐝", false]
+      ["You (I saw it coming)", "Wrong answer 😏 Cute try, but I caught feelings first.", false],
+      ["Me (I tried to play it cool)", "", true],
+      ["Both at the same time (soulmate timing ✨)", "Wrong answer 😂 Not this time… I swooped in first.", false],
+      ["Our vibes before we did", "Wrong answer 😌 The vibes were strong, but I fell first.", false]
     ]
   },
   { q: "Who is funnier? 😏", a: [
-      ["Me (obviously 🙄)", "You’re funny too, but we’re both 😂", false],
-      ["You (don’t let it go to your head)", "Okay yes, but we’re a comedy duo 😌", false],
+      ["Me (obviously 🙄)", "Wrong answer 😂 Nice try, but we’re funnier together.", false],
+      ["You (don’t let it go to your head)", "Wrong answer 😏 Okay maybe… but sharing the spotlight.", false],
       ["Both of us (comedy duo energy 😌)", "", true],
-      ["The arguments we turn into jokes", "True, but still not as funny 😏", false]
+      ["The arguments we turn into jokes", "Wrong answer 😅 Funny, but not *that* funny.", false]
     ]
   },
   { q: "Who loves more? 🥰", a: [
-      ["You (dramatically)", "Dramatic yes, but I love harder 💗", false],
-      ["Me (unhealthily 😌)", "Maybe… but my love is endless 💛", false],
-      ["Both—just differently but deeply 💗", "", true],
-      ["Yes.", "Yes… but more than yes 😘", false]
+      ["You (dramatically)", "Wrong answer 😌 Dramatic? yes. But love is equal here.", false],
+      ["Me (unhealthily 😌)", "Wrong answer 😏 It’s healthy… just very intense.", false],
+      ["Both—just differently but deeply 💗", "", true]
     ]
   },
   { q: "What’s my favorite thing about you? 😍", a: [
-      ["Your looks (hello??)", "You look amazing, but my favorite is your heart 💛", false],
-      ["Your personality (huge bonus)", "Personality top-tier, but still… 💖", false],
+      ["Your looks (hello??)", "Wrong answer 😏 You’re gorgeous, but that’s not what got me.", false],
+      ["Your personality (huge bonus)", "Wrong answer 😌 Close… but it goes deeper than that.", false],
       ["The way you make me feel loved & calm 🤍", "", true],
-      ["The fact that you’re mine 😌", "True, but I love that feeling too 😘", false]
+      ["The fact that you’re mine 😌", "Wrong answer 😘 I love that too, but that’s not the reason.", false]
     ]
   }
 ];
