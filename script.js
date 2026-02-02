@@ -1,4 +1,3 @@
-// 💖 HEARTS
 setInterval(() => {
   const h = document.createElement("div");
   h.className = "heart";
